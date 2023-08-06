@@ -1,1 +1,1 @@
-# push_swap
+push_Swap bir sıralama algoritmasıdır
