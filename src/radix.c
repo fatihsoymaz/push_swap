@@ -12,26 +12,6 @@
 
 #include "push_swap.h"
 
-static int	get_max_bits(t_list **stack)
-{
-	t_list	*head;
-	int		max;
-	int		max_bits;
-
-	head = *stack;
-	max = head->index;
-	max_bits = 0;
-	while (head)
-	{
-		if (head->index > max)
-			max = head->index;
-		head = head->next;
-	}
-	while ((max >> max_bits))
-		max_bits++;
-	return (max_bits);
-}
-
 void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	int		i;
@@ -39,9 +19,11 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 	int		size;
 	int		max_bits;
 
+	max_bits = 0;
 	i = 0;
 	size = ft_lstsize(*stack_a);
-	max_bits = get_max_bits(stack_a);
+	while ((size -1) >> max_bits)
+		max_bits++;
 	while (i < max_bits)
 	{
 		j = 0;
