@@ -10,7 +10,7 @@ ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS= $(SRCS:.c=.o)
 
 RM= rm -rf
-CC = gcc
+CC = cc
 CFLAGS= -Wall -Werror -Wextra
 
 all: $(NAME)
